@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胡振杰 - 个人简历</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --accent-color: #06b6d4;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-dark: #0f172a;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .resume-container {
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-lg);
+            margin: 2rem auto;
+            max-width: 1200px;
+            min-height: calc(100vh - 4rem);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* 科技感动画 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(37, 99, 235, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.6), 0 0 30px rgba(37, 99, 235, 0.4); }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #1e40af 100%);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .avatar-section {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .tech-orbs {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+
+        .orb {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #06b6d4;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            top: 0;
+            right: 0;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            top: 20px;
+            right: -15px;
+            animation-delay: 2s;
+            background: #3b82f6;
+        }
+
+        .orb-3 {
+            top: -10px;
+            right: -25px;
+            animation-delay: 4s;
+            background: #8b5cf6;
+        }
+
+        .info-section {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #06b6d4;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #cbd5e1;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .contact-value {
+            color: #e2e8f0;
+        }
+
+        .wechat-qr-container {
+            position: relative;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+
+        .wechat-qr {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            object-fit: cover;
+        }
+
+        .wechat-qr:hover {
+            transform: scale(1.1);
+            border-color: #06b6d4;
+            box-shadow: 0 4px 8px rgba(6, 182, 212, 0.3);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                justify-content: center;
+            }
+            
+            .contact-info {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .wechat-qr {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .resume-container {
+                margin: 1rem;
+                border-radius: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 2rem 0;
+            }
+            
+            .avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 1.8rem;
+            }
+            
+            .name {
+                font-size: 1.75rem;
+            }
+            
+            .stats {
+                gap: 1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .wechat-qr {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        /* 微信二维码模态框样式 */
+        .qr-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .qr-modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            animation: scaleIn 0.3s ease;
+        }
+
+        .qr-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .qr-modal-close:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .qr-modal-body {
+            text-align: center;
+        }
+
+        .qr-modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .qr-modal-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .qr-modal-wechat {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .qr-modal-content {
+                padding: 1.5rem;
+                max-width: 350px;
+            }
+            
+            .qr-modal-image {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .qr-modal-title {
+                font-size: 1.25rem;
+            }
+        }
+            
+            .resume-container {
+                margin: 0.5rem;
+                border-radius: 4px;
+            }
+            
+            .container {
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* 添加其他section的基础样式 */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* 目录导航样式 */
+        .toc-container {
+            position: relative;
+        }
+
+        .toc-sidebar {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1rem 0.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .toc-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .toc-item {
+            width: 100%;
+        }
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+        }
+
+        .toc-link:hover {
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateX(4px);
+        }
+
+        .toc-link.active {
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.15);
+        }
+
+        .toc-link.active::after {
+            content: '';
+            position: absolute;
+            right: -0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .toc-icon {
+            font-size: 1rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .toc-text {
+            white-space: nowrap;
+        }
+
+        /* 移动端目录样式 */
+        .toc-mobile-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 101;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .toc-mobile-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .toc-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .toc-mobile.active {
+            display: block;
+        }
+
+        .toc-mobile-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 280px;
+            height: 100%;
+            background: white;
+            padding: 2rem 1rem;
+            box-shadow: var(--shadow-lg);
+            overflow-y: auto;
+        }
+
+        .toc-mobile-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .toc-mobile-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-mobile-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .toc-mobile-link:hover {
+            background: var(--bg-secondary);
+        }
+
+        .toc-mobile-link.active {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+        }
+
+        .toc-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .toc-container {
+                display: none;
+            }
+            
+            .toc-mobile-toggle {
+                display: block;
+            }
+        }
+
+        /* Section ID样式 */
+        .section[id] {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="resume-container">
+            <!-- Header Section -->
+            <header class="header">
+                <div class="container">
+                    <div class="header-content">
+                        <div class="avatar-section">
+                            <div class="avatar">
+                                <div class="avatar-placeholder">胡</div>
+                            </div>
+                            <div class="tech-orbs">
+                                <div class="orb orb-1"></div>
+                                <div class="orb orb-2"></div>
+                                <div class="orb orb-3"></div>
+                            </div>
+                        </div>
+                        <div class="info-section">
+                            <h1 class="name">胡振杰</h1>
+                            <p class="title">架构师&& AI</p>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">9年</span>
+                                    <span class="stat-label">工作经验</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">32岁</span>
+                                    <span class="stat-label">年龄</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">浙江杭州</span>
+                                    <span class="stat-label">所在地</span>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <span class="contact-label">📱</span>
+                                    <span class="contact-value">18268185209</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-label">📧</span>
+                                    <span class="contact-value">huzhenjie@rjnetwork.net.cn</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-label">💬</span>
+                                    <span class="contact-value">worker_680</span>
+                                    <div class="wechat-qr-container">
+                                        <img src="/me.jpg" alt="微信二维码" class="wechat-qr" onclick="showQRModal()" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 桌面端悬浮目录 -->
+            <nav class="toc-container">
+                <div class="toc-sidebar">
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="#about" class="toc-link active">
+                                <span class="toc-icon">👤</span>
+                                <span class="toc-text">关于我</span>
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#experience" class="toc-link">
+                                <span class="toc-icon">💼</span>
+                                <span class="toc-text">工作经历</span>
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#projects" class="toc-link">
+                                <span class="toc-icon">🚀</span>
+                                <span class="toc-text">项目经验</span>
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#skills" class="toc-link">
+                                <span class="toc-icon">⚡</span>
+                                <span class="toc-text">技能特长</span>
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#open-source" class="toc-link">
+                                <span class="toc-icon">🚀</span>
+                                <span class="toc-text">开源项目</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- 移动端目录内容 -->
+            <div class="toc-mobile">
+                <div class="toc-mobile-content">
+                    <button class="toc-close">✕</button>
+                    <ul class="toc-mobile-list">
+                        <li class="toc-mobile-item">
+                            <a href="#about" class="toc-mobile-link">
+                                <span class="toc-icon">👤</span>
+                                <span>关于我</span>
+                            </a>
+                        </li>
+                        <li class="toc-mobile-item">
+                            <a href="#experience" class="toc-mobile-link">
+                                <span class="toc-icon">💼</span>
+                                <span>工作经历</span>
+                            </a>
+                        </li>
+                        <li class="toc-mobile-item">
+                            <a href="#projects" class="toc-mobile-link">
+                                <span class="toc-icon">🚀</span>
+                                <span>项目经验</span>
+                            </a>
+                        </li>
+                        <li class="toc-mobile-item">
+                            <a href="#skills" class="toc-mobile-link">
+                                <span class="toc-icon">⚡</span>
+                                <span>技能特长</span>
+                            </a>
+                        </li>
+                        <li class="toc-mobile-item">
+                            <a href="#open-source" class="toc-mobile-link">
+                                <span class="toc-icon">💻</span>
+                                <span>开源项目</span>
+                            </a>
+                        </li>
+                        <li class="toc-mobile-item">
+                            <a href="#ai-application" class="toc-mobile-link">
+                                <span class="toc-icon">🤖</span>
+                                <span>AI技术应用</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 微信二维码模态框 -->
+            <div id="qrModal" class="qr-modal" style="display: none;">
+                <div class="qr-modal-content">
+                    <button class="qr-modal-close" onclick="hideQRModal()">×</button>
+                    <div class="qr-modal-body">
+                        <h3 class="qr-modal-title">微信扫码</h3>
+                        <img src="/me.jpg" alt="微信二维码" class="qr-modal-image" />
+                        <p class="qr-modal-wechat">微信号：worker_680</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 移动端目录切换按钮 -->
+            <button class="toc-mobile-toggle">☰</button>
+
+            <!-- 其他section的结构将通过JavaScript动态加载 -->
+            <div id="content-sections">
+                <!-- 这里会通过JavaScript添加其他内容 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 目录导航功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 导航元素
+            const tocLinks = document.querySelectorAll('.toc-link, .toc-mobile-link');
+            const tocMobileToggle = document.querySelector('.toc-mobile-toggle');
+            const tocMobile = document.querySelector('.toc-mobile');
+            const tocClose = document.querySelector('.toc-close');
+
+            // 目录项和对应的section
+            const sectionMap = {
+                'about': document.getElementById('about') || createSection('about', '关于我', '👤', '个人简介和求职意向'),
+                'experience': document.getElementById('experience') || createSection('experience', '工作经历', '💼', '详细的工作经历'),
+                'projects': document.getElementById('projects') || createSection('projects', '项目经验', '🚀', '重要项目展示'),
+                'skills': document.getElementById('skills') || createSection('skills', '技能特长', '⚡', '技术技能和认证'),
+                'open-source': document.getElementById('open-source') || createSection('open-source', '开源项目', '💻', 'GitHub开源项目展示'),
+                'ai-application': document.getElementById('ai-application') || createSection('ai-application', 'AI技术应用', '🤖', 'AI技术应用项目展示')
+            };
+
+            // 创建缺失的section（用于演示）
+            function createSection(id, title, icon, description) {
+                const contentSections = document.getElementById('content-sections');
+                const section = document.createElement('section');
+                section.id = id;
+                section.className = 'section';
+                section.innerHTML = `
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <span class="section-icon">${icon}</span>
+                                ${title}
+                            </h2>
+                            <div class="section-line"></div>
+                        </div>
+                        <div class="section-content">
+                            <p>${description}</p>
+                            <p>这部分内容将在完整的Vue.js版本中详细展示。</p>
+                        </div>
+                    </div>
+                `;
+                contentSections.appendChild(section);
+                return section;
+            }
+
+            // 滚动监听和导航高亮
+            function updateActiveNav() {
+                const scrollY = window.pageYOffset;
+                const windowHeight = window.innerHeight;
+                let current = '';
+
+                for (const [id, section] of Object.entries(sectionMap)) {
+                    if (section) {
+                        const rect = section.getBoundingClientRect();
+                        const sectionTop = scrollY + rect.top - 100;
+                        
+                        if (scrollY >= sectionTop - windowHeight / 3) {
+                            current = id;
+                        }
+                    }
+                }
+
+                // 更新导航状态
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href');
+                    if (href === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // 平滑滚动
+            function smoothScrollTo(targetId) {
+                const target = document.getElementById(targetId);
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // 考虑固定导航的高度
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            // 导航链接点击事件
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    smoothScrollTo(targetId);
+                    
+                    // 移动端关闭菜单
+                    if (tocMobile && tocMobile.classList.contains('active')) {
+                        tocMobile.classList.remove('active');
+                    }
+                });
+            });
+
+            // 移动端菜单切换
+            if (tocMobileToggle && tocMobile) {
+                tocMobileToggle.addEventListener('click', function() {
+                    tocMobile.classList.add('active');
+                });
+
+                tocClose.addEventListener('click', function() {
+                    tocMobile.classList.remove('active');
+                });
+
+                // 点击遮罩关闭菜单
+                tocMobile.addEventListener('click', function(e) {
+                    if (e.target === tocMobile) {
+                        tocMobile.classList.remove('active');
+                    }
+                });
+            }
+
+            // 滚动事件监听
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        updateActiveNav();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+
+            // 初始加载时更新导航状态
+            updateActiveNav();
+
+            // 添加滚动动画
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'slideInUp 0.6s ease forwards';
+                    }
+                });
+            }, observerOptions);
+
+            // 观察所有卡片元素
+            document.querySelectorAll('.stat-item, .contact-item').forEach(el => {
+                observer.observe(el);
+            });
+
+            // 添加鼠标悬浮效果
+            document.querySelectorAll('.avatar').forEach(avatar => {
+                avatar.addEventListener('mouseenter', () => {
+                    avatar.style.transform = 'scale(1.05)';
+                });
+                
+                avatar.addEventListener('mouseleave', () => {
+                    avatar.style.transform = 'scale(1)';
+                });
+            });
+
+            // 响应式导航
+            function handleResize() {
+                const width = window.innerWidth;
+                const header = document.querySelector('.header-content');
+                
+                if (width < 768) {
+                    header.style.flexDirection = 'column';
+                } else {
+                    header.style.flexDirection = 'row';
+                }
+            }
+
+            window.addEventListener('resize', handleResize);
+            handleResize(); // 初始化时调用
+
+            // 添加section图标样式
+            const style = document.createElement('style');
+            style.textContent = `
+                .section-icon {
+                    margin-right: 0.5rem;
+                }
+                .section-content {
+                    text-align: center;
+                    padding: 2rem;
+                    color: var(--text-secondary);
+                }
+                .section-content p {
+                    margin-bottom: 1rem;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // 微信二维码模态框功能
+            window.showQRModal = function() {
+                const modal = document.getElementById('qrModal');
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.hideQRModal = function() {
+                const modal = document.getElementById('qrModal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            };
+
+            // 点击模态框背景关闭
+            document.getElementById('qrModal')?.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    hideQRModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
